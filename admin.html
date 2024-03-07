@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styleadmin.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Librarian's Desk</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17.0.1/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.1/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/babel">
+        const Header = () => {
+            return (
+                <header className="header">
+                    <h1>Librarian's Desk</h1>
+                    <nav>
+                        <ul>
+                            <li><a href="#dashboard">Dashboard</a></li>
+                            <li><a href="#">Books</a></li>
+                            <li><a href="#">Authors</a></li>
+                            <li><a href="#">Issue Books</a></li>
+                            <li><a href="#">Registered Users</a></li>
+                            <li><a href="#">Log Me Out</a></li>
+                            <li><a href="#">Change Password</a></li>
+                        </ul>
+                    </nav>
+                </header>
+            );
+        };
+
+        const Card = ({ title, value }) => {
+            return (
+                <div className="card">
+                    <h2>{title}</h2>
+                    <p>{value}</p>
+                </div>
+            );
+        };
+
+        const MainContent = () => {
+            return (
+                <main className="main-content">
+                    <Card title="Books Listed" value="2" />
+                    <Card title="Authors Listed" value="2" />
+                    <Card title="Times Book Issued" value="6" />
+                    <Card title="Times Books Returned" value="3" />
+                    <Card title="Registered Users" value="6" />
+                </main>
+            );
+        };
+
+        const App = () => {
+            return (
+                <div className="container">
+                    <Header />
+                    <MainContent />
+                </div>
+            );
+        };
+
+        ReactDOM.render(<App />, document.getElementById("root"));
+    </script>
+</body>
+</html>
